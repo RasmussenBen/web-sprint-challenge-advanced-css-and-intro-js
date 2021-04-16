@@ -1,4 +1,3 @@
-// test commit for codegrade
 export const artists = [
     {
       "id": 0,
