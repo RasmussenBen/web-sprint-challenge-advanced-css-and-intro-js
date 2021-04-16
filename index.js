@@ -286,17 +286,18 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
+const newArtist = {
+  "id": 20,
+  "name": "Ben Rasmussen",
+  "years": "1991 - current day",
+  "genre": "Web Design",
+  "nationality": "American",
+  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "wikipedia": "n/a",
+  "paintings": 0
+};
+
 function addArtist(array) {
-  const newArtist = {
-    "id": 20,
-    "name": "Ben Rasmussen",
-    "years": "1991 - current day",
-    "genre": "Web Design",
-    "nationality": "American",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "wikipedia": "n/a",
-    "paintings": 0
-  }
   array.push(newArtist);
 }
 console.log(addArtist(artists));
@@ -308,12 +309,16 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  const prolificArtists = [];
+  for (let i=0; i<array.length; i++) {
+    if (array[i].paintings >= 100) {
+      prolificArtists.push(array[i].name);
+    }
+  }
+  return prolificArtists;
 }
-
-
-
+console.log(lotsOfArt(artists));
 
 // 🎨🎨 STRETCH 🎨🎨//
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
